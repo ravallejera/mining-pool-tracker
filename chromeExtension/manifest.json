@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Stamon Pool Tracker",
+  "description": "Mining Pool tracker",
+  "version": "1.0",
+  "icons": {
+    "16": "/images/16.png",
+    "48": "/images/32.png",
+    "128": "/images/128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "/images/16.png",
+      "48": "/images/32.png",
+      "128": "/images/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://yooshi.io/starmon/mining?tracking=true"],
+      "js": ["init.js"]
+    }
+  ],
+  "background" : {
+    "scripts" : ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["notifications"]
+}
